@@ -99,10 +99,10 @@ def imu(world_name, model_name, link_name, sensor_name):
 
 def navsat(world_name, model_name, link_name, sensor_name):
     gz_sensor_prefix = gz_prefix(world_name, model_name, link_name, sensor_name)
-    ros_sensor_prefix = ros_prefix('', 'gps')
+    ros_sensor_prefix = ros_prefix(f'{sensor_name}', 'gps')
     return Bridge(
         gz_topic=f'{gz_sensor_prefix}/navsat',
-        ros_topic=f'{ros_sensor_prefix}gps/fix',
+        ros_topic=f'{ros_sensor_prefix}/gps/fix',
         gz_type='ignition.msgs.NavSat',
         ros_type='sensor_msgs/msg/NavSatFix',
         direction=BridgeDirection.GZ_TO_ROS)

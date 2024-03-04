@@ -242,7 +242,6 @@ class Model:
                                          stderr=subprocess.PIPE)
         stdout = xacro_process.communicate()[0]
         urdf_str = codecs.getdecoder('unicode_escape')(stdout)[0]
-        print(xacro_command)
 
         # run gz sdf print to generate sdf file
         model_dir = os.path.join(get_package_share_directory('vrx_gazebo'), 'models', self.model_name)

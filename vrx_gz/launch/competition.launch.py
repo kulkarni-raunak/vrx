@@ -40,11 +40,14 @@ def launch(context, *args, **kwargs):
 
     models = []
     if config_file and config_file != '':
+        print(f" ################# config_file   {config_file}    #######################")
         with open(config_file, 'r') as stream:
             models = Model.FromConfig(stream)
     else:
       m = Model('wamv', 'wam-v', [-532, 162, 0, 0, 0, 1])
+      print(f" #################  model m  {m}    #######################")
       if robot_urdf and robot_urdf != '':
+          print(f" #################  robot_urdf  {robot_urdf}    #######################")
           m.set_urdf(robot_urdf)
       models.append(m)
 

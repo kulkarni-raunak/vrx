@@ -36,10 +36,10 @@
 
 
     <gazebo reference="${namespace}/${name}_link">
-      <sensor name="navsat" type="navsat">
+      <sensor name="${name}_navsat" type="navsat">
         <always_on>1</always_on>
         <update_rate>${update_rate}</update_rate>
-        <!--<topic>${namespace}/${sensor_namespace}gps/gps/fix</topic>-->
+        <!-- <topic>${namespace}/${sensor_namespace}gps/gps/fix</topic> -->
       </sensor>
     </gazebo>
   </xacro:macro>
